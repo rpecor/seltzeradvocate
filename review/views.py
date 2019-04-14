@@ -1,24 +1,9 @@
 from django.shortcuts import render
-
-reviews = [
-  {
-      'author': 'Ryan',
-      'seltzer': 'Kroger CranLime',
-      'content': 'Its guud',
-      'date_reviewed': 'August, 27, 2018'
-  },
-  {
-      'author': 'Jane',
-      'seltzer': 'Kroger Lime',
-      'content': 'Its not good',
-      'date_reviewed': 'Jan, 4, 2010'
-  }
-]
-
+from .models import Review
 
 def home(request):
   context = {
-      'reviews': reviews
+      'reviews': Review.objects.all()
   }
   return render(request, 'review/home.html', context)
 
