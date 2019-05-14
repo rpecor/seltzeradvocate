@@ -21,6 +21,7 @@ class Review(models.Model):
   taste = models.DecimalField(max_digits=3, decimal_places=2)
   carbonation = models.DecimalField(max_digits=3, decimal_places=2)
   overall = models.DecimalField(max_digits=3, decimal_places=2)
+  image = models.ImageField(default="default_seltzer.jpg", upload_to='seltzer_pics')
 
   def __str__(self):
     return self.title
