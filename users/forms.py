@@ -21,8 +21,8 @@ class ProfileUpdateForm(forms.ModelForm):
   class Meta:
     model = Profile
     birthday = forms.DateField(
-            widget=forms.TextInput(
-                attrs={'type': 'date'}
-            )
+        widget=forms.TextInput(
+            attrs={'type': 'date'}
         )
+    )
     fields = ['image', 'birthday']

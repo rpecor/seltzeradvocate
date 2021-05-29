@@ -2,12 +2,14 @@
 {%  block content %}
   {% for review in  reviews %}
   <article class="media content-section">
+      <img class="rounded-circle article-img" src="{{ review.author.profile.image.url }}">
       <div class="media-body">
         <div class="article-metadata">
           <a class="mr-2" href="#">{{ review.author }}</a>
           <small class="text-muted">{{ review.date_posted|date:"F d, Y" }}</small>
         </div>
-        <h2><a class="article-title" href="#">{{ review.seltzer }}</a></h2>
+        <h2><a class="article-title" href="{% url 'seltzer-detail' review.seltzer.id %}">{{ review.seltzer }}</a></h2>
+        <h5><a class="article-title" href="{% url 'review-detail' review.id %}">{{ review.title }}</a></h5>
         <p class="article-content">{{ review.content }}</p>
       </div>
     </article>
